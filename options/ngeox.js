@@ -1429,3 +1429,31 @@ ngeox.source.SwisstopoOptions.prototype.format;
  * @type {string}
  */
 ngeox.source.SwisstopoOptions.prototype.timestamp;
+
+
+/**
+ * @typedef {{
+ *   handleFileContent: function(string, File),
+ *   isValidUrl: function(string): boolean
+ * }}
+ */
+ngeox.ImportDndOptions;
+
+
+/**
+ * @typedef {{
+ *   handleFileContent: function(string, File)
+ * }}
+ */
+ngeox.ImportLocalOptions;
+
+
+/**
+ * @typedef {{
+ *   handleFileContent: function(string, File),
+ *   transformUrl: function(string): string,
+ *   urls: Array<string>,
+ *   isValidUrl: function(string): boolean
+ * }}
+ */
+ngeox.ImportOnlineOptions;
