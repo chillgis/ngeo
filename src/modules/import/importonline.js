@@ -56,11 +56,12 @@ goog.require('ngeo.fileService');
 
         // Fill the list of suggestions with all the data
         var initSuggestions = function() {
-          var taView = $(taElt).data('ttView');
-          var dataset = taView.datasets[0];
-          dataset.getSuggestions('http', function(suggestions) {
-            taView.dropdownView.renderSuggestions(dataset, suggestions);
-          });
+          // FIXME: actually do something here when typeahead is updated to recent version.
+          // var taView = $(taElt).data('ttView');
+          // var dataset = taView.datasets[0];
+          // dataset.getSuggestions('http', function(suggestions) {
+          //   taView.dropdownView.renderSuggestions(dataset, suggestions);
+          // });
         };
 
         taElt.on('typeahead:initialized', function(evt) {
