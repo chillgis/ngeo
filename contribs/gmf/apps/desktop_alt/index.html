@@ -23,6 +23,12 @@
               <span translate>Themes</span>
               <span class="caret"></span>
             </a>
+            <div>coucou</div>
+            <div id="import"
+              ngeo-import-local
+              ngeo-import-local-options="::mainCtrl.importOptions">
+            </div>
+            <div>toto</div>
             <gmf-themeselector class="dropdown-menu"
               gmf-themeselector-currenttheme="mainCtrl.theme"
               gmf-themeselector-filter="::mainCtrl.filter">
@@ -220,7 +226,7 @@
       <ngeo-modal ng-model="mainCtrl.modalShareShown" ngeo-modal-destroy-content-on-hide="true">
         <gmf-share gmf-share-email="false"/>
       </ngeo-modal>
-      <ngeo-modal ng-model="disclaimerVisibility" ngeo-modal-destroy-content-on-hide="true">
+      <ngeo-modal ng-model="XXXXdisclaimerVisibility" ngeo-modal-destroy-content-on-hide="true">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         </div>

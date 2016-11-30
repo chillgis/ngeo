@@ -9,20 +9,34 @@ goog.require('ngeo.fileService');
   ]);
   ngeo.importLocalDirective.module = module;
 
+  module.value('ngeoImportLocalTemplateUrl',
+      /**
+       * @param {angular.JQLite} element Element.
+       * @param {angular.Attributes} attrs Attributes.
+       * @return {boolean} Template URL.
+       */
+      function(element, attrs) {
+        var templateUrl = attrs['ngeoImportLocalTemplateUrl'];
+        return templateUrl !== undefined ? templateUrl :
+            ngeo.baseTemplateUrl + '/../../modules/import/partials/import-local.html';
+      });
+
   /**
    * @constructor
    * @param {angular.$timeout} $timeout .
    * @param {ngeo.File} ngeoFile .
+   * @param {string|function(!angular.JQLite=, !angular.Attributes=)}
+         ngeoImportLocalTemplateUrl Template URL for the directive.
    * @ngInject
    * @struct
    */
-  var Directive = function($timeout, ngeoFile) {
+  var Directive = function($timeout, ngeoFile, ngeoImportLocalTemplateUrl) {
 
     var timeoutP;
 
     return {
       restrict: 'A',
-      templateUrl: 'modules/import/partials/import-local.html',
+      templateUrl: ngeoImportLocalTemplateUrl,
       scope: {
         options: '=ngeoImportLocalOptions'
       },
